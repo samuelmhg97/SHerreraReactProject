@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {GiShoppingCart} from "react-icons/gi"
 import ModalShoppingCart from '../ModalShoppingCart/ModalShoppingCart'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
 
@@ -14,9 +15,11 @@ export default function Navbar() {
   }
 
   return (
-    <div className='navBar-Container'>
+    <nav className='navBar-Container'>
         <div className='navBarImg-Container'>
+          <Link to="/">
             <img className= "navBarImg" src="https://bootcamp.joshuaherreragroup.com/wp-content/uploads/2022/04/Bootcamp-blanca.png" alt="logo-bootcamp" />
+          </Link>
         </div>
         <div className='navBar-Options'>
             <h4 className='navOption'>Inicio</h4>
@@ -29,7 +32,7 @@ export default function Navbar() {
           <GiShoppingCart  className='icon'/>
           <ModalShoppingCart open = {cartOpen}/>
         </div>
-    </div>
+    </nav>
   )
 }
 

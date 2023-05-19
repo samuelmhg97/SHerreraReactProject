@@ -1,26 +1,24 @@
-import logo from './logo.svg';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+// import ItemCount from './Components/ItemCount/ItemCount.jsx';
 import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
         <Navbar/>
-      </header>
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+          <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+          <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
+        </Routes>
     </div>
+      </BrowserRouter>
   );
 }
 

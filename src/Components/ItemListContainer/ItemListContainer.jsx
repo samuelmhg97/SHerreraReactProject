@@ -24,8 +24,10 @@ const ItemListContainer = ({greeting}) => {
         })
     }, [categoryId])
   return (
-    <div className='flex'>
-        <h1>{greeting}</h1>
+    <div className='flex-col pt-1'>
+        <div className='h-20 flex flex-col justify-center items-center'>
+        <h1 className=''>Lista de Cursos</h1>
+        </div>
         <ItemList products={products}/>
     </div>
   )

@@ -15,7 +15,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className='navBar-Container'>
+    <nav className='navBar-Container  w-full'>
         <div className='navBarImg-Container'>
           <Link to="/">
             <img className= "navBarImg" src="https://bootcamp.joshuaherreragroup.com/wp-content/uploads/2022/04/Bootcamp-blanca.png" alt="logo-bootcamp" />

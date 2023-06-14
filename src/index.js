@@ -18,26 +18,38 @@ import Navbar from './Components/Navbar/Navbar';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ItemListContainer/>
+    element:( <div>
+      <Navbar/>
+      <ItemListContainer/>
+    </div>)
   },
   {
     path: "/category/:categoryId",
-    element: <ItemListContainer/>
+    element:( <div>
+      <Navbar/>
+      <ItemListContainer/>
+    </div>)
   }, {
     path: "/item/:itemId",
-    element: <ItemDetailContainer/>
+    element:( <div>
+      <Navbar/>
+      <ItemDetailContainer/>
+    </div>)
   }, {
     path: "/cart",
-    element: <Cart/>
+    element:( <div>
+      <Navbar/>
+      <Cart/>
+    </div>)
   }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App/> */}
-    <Navbar/>
-    <RouterProvider router={router} />
+    <App/>
+{/* 
+    <RouterProvider router={router} /> */}
   </React.StrictMode>
 );
 

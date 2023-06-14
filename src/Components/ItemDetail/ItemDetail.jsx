@@ -7,7 +7,7 @@ const ItemDetail = ({id, titulo, descripcion, precio, urlImagen, tag, stock}) =>
         <h2>{titulo}</h2>
         <img src={urlImagen} alt="" />
         <h2>{descripcion}</h2>
-        <p>{precio}</p>
+        <p>{id}</p>
         <p>{tag}</p>
         <p>{stock}</p>
         <ItemCount initial={1} stock={10} onAdd={(qty) => console.log(qty)}/>

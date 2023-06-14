@@ -30,7 +30,11 @@ const Item = ({id, titulo, descripcion, precio, urlImagen, tag, stock}) => {
             <div className="flex-auto justify-evenly">
               <div className="flex flex-wrap ">
                 <div className="flex items-center w-full justify-between min-w-0 ">
-                  <h2 className="text-lg mr-auto cursor-pointer text-gray-200 hover:text-purple-500 truncate ">{titulo}</h2>
+                  <h2 className="text-lg mr-auto cursor-pointer text-gray-200 hover:text-purple-500 truncate ">
+                  <Link to={`Item/${id}`}>
+                    {titulo}
+                    </Link>
+                    </h2>
                   <div className="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
                     INSTOCK</div>
                 </div>

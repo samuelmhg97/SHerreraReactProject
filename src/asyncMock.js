@@ -20,7 +20,7 @@ let products = [
     {
       id: 3,
       titulo: "Curso de Gestión del Tiempo",
-      descripcion: "Aprende a organizar tu tiempo de manera eficiente y evitar la procrastinación en tu trabajo como nómada o freelancer.",
+      descripcion: "  ",
       precio: 69.99,
       urlImagen: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       tag: "nomada",

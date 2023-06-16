@@ -14,42 +14,50 @@ import {
 } from "react-router-dom"; 
 import Navbar from './Components/Navbar/Navbar';
 import { Context, CustomProvider } from './Components/CartContext';
-
+import CheckOut from './Components/CheckOut/CheckOut';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:( <div>
-      <CustomProvider>
+
       <Navbar/>
       <ItemListContainer/>
-      </CustomProvider>
+
 
     </div>)
   },
   {
     path: "/category/:categoryId",
     element:( <div>
-      <CustomProvider>
+
       <Navbar/>
       <ItemListContainer/>
-      </CustomProvider>
+
     </div>)
   }, {
     path: "/item/:itemId",
     element:( <div>
-      <CustomProvider>
+
       <Navbar/>
       <ItemDetailContainer/>
-      </CustomProvider>
+
     </div>)
   }, {
     path: "/cart",
     element:( <div>
-      <CustomProvider>
+
       <Navbar/>
       <Cart/>
-      </CustomProvider>
+
+    </div>)
+  }, {
+    path: "/checkout",
+    element:( <div>
+
+      <Navbar/>
+      <CheckOut/>
+
     </div>)
   }
 ])
@@ -57,8 +65,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-
+    <CustomProvider>
     <RouterProvider router={router} />
+    </CustomProvider>
     
   </React.StrictMode>
 );

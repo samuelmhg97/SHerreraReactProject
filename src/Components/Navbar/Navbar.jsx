@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {GiShoppingCart} from "react-icons/gi"
 import ModalShoppingCart from '../ModalShoppingCart/ModalShoppingCart'
 import { Link } from 'react-router-dom'
+import { Context } from '../CartContext'
 
 export default function Navbar() {
 
-  let carItems =  []
 
   let [cartOpen, setCartOpen] = useState(false)
-
+ const {totalQuantity} = useContext(Context)
   const handleCart = (e) => {
     e.preventDefault()
     setCartOpen(!cartOpen)
@@ -27,11 +27,12 @@ export default function Navbar() {
             <h4 className='navOption'>Contacto</h4>
             <h4 className='navOption'>Blog</h4>
         </div>
-        <div className='navBarIcon-Container' onClick={handleCart}>
-          <h4 className='navBarCartCounter'>{carItems.length}</h4>
+        <Link to="/cart">
+        <div className='navBarIcon-Container'>
+          <h4 className='navBarCartCounter'>{totalQuantity}</h4>
           <GiShoppingCart  className='icon'/>
-          <ModalShoppingCart open = {cartOpen}/>
         </div>
+          </Link>
     </nav>
   )
 }

@@ -13,33 +13,43 @@ import {
   RouterProvider
 } from "react-router-dom"; 
 import Navbar from './Components/Navbar/Navbar';
+import { Context, CustomProvider } from './Components/CartContext';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:( <div>
+      <CustomProvider>
       <Navbar/>
       <ItemListContainer/>
+      </CustomProvider>
+
     </div>)
   },
   {
     path: "/category/:categoryId",
     element:( <div>
+      <CustomProvider>
       <Navbar/>
       <ItemListContainer/>
+      </CustomProvider>
     </div>)
   }, {
     path: "/item/:itemId",
     element:( <div>
+      <CustomProvider>
       <Navbar/>
       <ItemDetailContainer/>
+      </CustomProvider>
     </div>)
   }, {
     path: "/cart",
     element:( <div>
+      <CustomProvider>
       <Navbar/>
       <Cart/>
+      </CustomProvider>
     </div>)
   }
 ])
@@ -47,9 +57,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
-{/* 
-    <RouterProvider router={router} /> */}
+
+    <RouterProvider router={router} />
+    
   </React.StrictMode>
 );
 

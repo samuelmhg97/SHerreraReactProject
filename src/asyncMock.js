@@ -164,7 +164,7 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId))
+            resolve(products.find(prod => prod.id === parseInt(productId)))
         })
     })
 }
@@ -172,7 +172,7 @@ export const getProductById = (productId) => {
 export const getProductByCategories= (productCategory) => {
   return new Promise((resolve) => {
       setTimeout(() => {
-          resolve(products.find(prod => prod.tag === productCategory))
+          resolve(products.find(prod => prod.tag === parseInt(productCategory)))
       })
   })
 }

@@ -15,6 +15,7 @@ import {
 import Navbar from './Components/Navbar/Navbar';
 import { Context, CustomProvider } from './Components/CartContext';
 import CheckOut from './Components/CheckOut/CheckOut';
+import Footer from './Components/Footer/Footer';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
 
       <Navbar/>
       <ItemListContainer/>
+      <Footer/>
 
 
     </div>)
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
 
       <Navbar/>
       <ItemListContainer/>
+      <Footer/>
 
     </div>)
   }, {
@@ -41,6 +44,7 @@ const router = createBrowserRouter([
 
       <Navbar/>
       <ItemDetailContainer/>
+      <Footer/>
 
     </div>)
   }, {
@@ -49,6 +53,7 @@ const router = createBrowserRouter([
 
       <Navbar/>
       <Cart/>
+      <Footer/>
 
     </div>)
   }, {

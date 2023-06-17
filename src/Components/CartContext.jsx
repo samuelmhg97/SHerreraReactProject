@@ -31,8 +31,17 @@ export const CustomProvider = ({children}) => {
     const isInCart = (itemId) => {
         return cart.some(prod => prod.id === itemId)
     }
+    const calculateTotal = () => {
+        let total = 0;
+        for (const item of cart) {
+          total += item.precio * item.qty;
+        }
+        return total;
+      };
 
-    const value = {cart, addItem, removeItem, clearCart, totalQuantity}
+      const total = calculateTotal()
+
+    const value = {cart, addItem, removeItem, clearCart, totalQuantity, total}
 
   return (
     <Context.Provider value={value}>{children}</Context.Provider>

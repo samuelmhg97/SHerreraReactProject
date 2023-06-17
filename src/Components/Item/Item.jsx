@@ -1,17 +1,28 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount.jsx'
 import { Link } from 'react-router-dom'
+import { Context } from '../CartContext.jsx'
+import { useContext } from 'react'
 
 const Item = ({id, titulo, descripcion, precio, urlImagen, tag, stock}) => {
+  const { addItem } = useContext(Context);
+
+  const handleAddToCart = () => {
+
+    const item = {
+      id,
+      titulo,
+      descripcion,
+      precio,
+      urlImagen,
+      tag,
+      stock
+    };
+    addItem(item, 1);
+  };
+
+
   return (
-    // <div className='contenedorPrueba'>
-    //     <img src={urlImagen} alt="" />
-    //     <h4>{titulo}</h4>
-    //     <p>{precio}</p>
-    //     <p>{stock}</p>
-    //     <ItemCount initial={1} stock={10} onAdd={(qty) => console.log(qty)}/>
-    //     <Link to={`Item/${id}`}>ver detalle</Link>
-    // </div>
     <div className="w-80 animated fadeIn faster left-0 top-0 flex justify-center items-center inset-0  outline-none focus:outline-none " id="modal-id">
   <div className=" bg-white opacity-80 inset-0"></div>
   <div className="w-full relative flex flex-col items-center justify-center ">
@@ -46,46 +57,8 @@ const Item = ({id, titulo, descripcion, precio, urlImagen, tag, stock}) => {
                   </svg>
                   <span className="text-gray-400 whitespace-nowrap mr-3 pb-1    ">4.60</span><span className="mr-2 text-gray-400">India</span>
                 </div>
-              {/* <div className="lg:flex  py-4  text-sm text-gray-600">
-                <div className="flex-1 inline-flex items-center  mb-3">
-                  <div className="w-full flex-none text-sm flex items-center text-gray-600">
-                    <ul className="flex flex-row justify-center items-center space-x-2">
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-blue-600 rounded-full transition ease-in duration-300">
-                          <a href="#blue" className="block w-3 h-3 bg-blue-600 rounded-full"></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-yellow-400 rounded-full transition ease-in duration-300">
-                          <a href="#yellow" className="block w-3 h-3  bg-yellow-400 rounded-full"></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-red-500 rounded-full transition ease-in duration-300">
-                          <a href="#red" className="block w-3 h-3  bg-red-500 rounded-full"></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-green-500 rounded-full transition ease-in duration-300">
-                          <a href="#green" className="block w-3 h-3  bg-green-500 rounded-full"></a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="flex-1 inline-flex items-center mb-3">
-                  <span className="text-secondary whitespace-nowrap mr-3">Size</span>
-                  <div className="cursor-pointer text-gray-400 ">
-                    <span className="hover:text-purple-500 p-1 py-0">S</span>
-                    <span className="hover:text-purple-500 p-1 py-0">M</span>
-                    <span className="hover:text-purple-500 p-1 py-0">L</span>
-                    <span className="hover:text-purple-500 p-1 py-0">XL</span>
-
-                  </div>
-                </div>
-              </div> */}
               <div className="flex space-x-2 text-sm font-medium justify-start">
-                <button className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
+                <button onClick={handleAddToCart} className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
                   <span>Add Cart</span>
                 </button>
                 <Link to={`Item/${id}`}>
